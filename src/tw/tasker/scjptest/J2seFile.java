@@ -22,7 +22,7 @@ public class J2seFile {
 		System.out.println("檔案是否存在？" + file.exists());
 		
 		// 在window下，請以這斜線/ (forward-slash)當路徑的分隔字元
-		windowFile = new File("D:/NewFile.txt");
+		windowFile = new File("tmp/NewFile.txt");
 		System.out.println("檔案是否存在？" + file.exists());
 
 		directory = new File("D:\\");
