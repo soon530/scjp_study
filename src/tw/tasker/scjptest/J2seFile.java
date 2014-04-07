@@ -11,6 +11,7 @@ import org.junit.Test;
 public class J2seFile {
 	private File file = null;
 	private File directory = null;
+	private File windowFile = null;
 
 	/**
 	 * new一個file object後，還不會建檔案
@@ -19,19 +20,24 @@ public class J2seFile {
 	public void initFileObject() {
 		file = new File("NewFile.txt");
 		System.out.println("檔案是否存在？" + file.exists());
+		
+		// 在window下，請以這斜線/ (forward-slash)當路徑的分隔字元
+		windowFile = new File("D:/NewFile.txt");
+		System.out.println("檔案是否存在？" + file.exists());
 
 		directory = new File("D:\\");
 		System.out.println("目錄是否存在？" + file.exists());
 	}
-
+	
 	/**
-	 * 沒有指定實體路徑的話，這裡沒辦法建檔案@@? 但書上確可以..
+	 * 可以建檔，另要注意，若檔案存在的話，是無法建立檔案的，所以會回傳false
 	 * 
 	 * @throws IOException
 	 */
 	@Test
 	public void createNewFile() throws IOException {
-		System.out.println("檔案是否存在？" + file.createNewFile());
+		System.out.println(file.getAbsolutePath() + " 檔案是否存在？" + file.createNewFile());
+		System.out.println(windowFile.getAbsolutePath() + " 檔案是否存在？" + windowFile.createNewFile());
 	}
 
 	/**
@@ -94,4 +100,6 @@ public class J2seFile {
 			System.out.println(file);			
 		}
 	}
+	
+	
 }
