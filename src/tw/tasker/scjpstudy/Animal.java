@@ -1,6 +1,7 @@
 package tw.tasker.scjpstudy;
 
-public class Animail {
+@Copyright("www.tasker.tw")
+public class Animal {
 	public void move() {
 		System.out.println("動物移動..");
 	}
